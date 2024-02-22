@@ -1,0 +1,20 @@
+아래의 쿼리 수정 요청 내역서를 참고로 하여 쿼리 튜닝을 수행하라.
+그리고 1) 수정된 쿼리와 변경사항 2) 오라클 SQL실행계획 3)명세를 작성하라.
+
+1. 기존 쿼리 내용
+select *
+FROM HCBS.T_LGO_LOAN_LDGR_M LOAN , HCBS.T_AA1_RPS_CUST_BAS_M RPS
+, HCBS.T_AA1_CUST_BAS_M BAS , HCBS.T_KEO_CMPG_CUST_INF_|
+, HCBS.T KEO CMPG INF TE CMPGI 
+WHERE 1=1
+AND LOAN CUST NO = #{custNo}
+AND RPS. SSNO = #{ssno}
+AND RPS. CUST_NO = BAS.RPS_CUST_NO
+AND BAS.CUST NO = LOAN.CUST_NO
+AND RPS.SSNO = CMPGC.SSNO
+AND CMPGC.CMPG_ID = CMPGI.CMPG _ID
+AND LOAN.PRDT CD = CMPGI.PRDT CD
+AND CMPGI.PRDT CD IN(440015)
+
+2. 기존 쿼리의 이슈
+속도 이슈 - 수행시 30초 이상이 걸리는 문제 상황.
