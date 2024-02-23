@@ -1,1 +1,23 @@
 벌써 5131원!
+
+-------------------------------------------------------------------------------------
+| Id  | Operation           | Name              | Rows  | Bytes | Cost (%CPU)| Time     |
+-------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT    |                   |       |       |    33 (100)|          |
+|   1 |  NESTED LOOPS       |                   |     1 |   344 |    33   (0)| 00:00:01 |
+|   2 |   NESTED LOOPS      |                   |     1 |   288 |    31   (0)| 00:00:01 |
+|   3 |    NESTED LOOPS     |                   |     1 |   208 |    29   (0)| 00:00:01 |
+|   4 |     NESTED LOOPS    |                   |     1 |   136 |    27   (0)| 00:00:01 |
+|   5 |      TABLE ACCESS   | T_LGO_LOAN_LDGR_M|     1 |    54 |     2   (0)| 00:00:01 |
+|   6 |       INDEX UNIQUE SCAN| <index_name>   |     1 |       |     1   (0)| 00:00:01 |
+|   7 |      TABLE ACCESS   | T_AA1_CUST_BAS_M|     1 |    82 |     1   (0)| 00:00:01 |
+|   8 |       INDEX UNIQUE SCAN| <index_name>   |     1 |       |     1   (0)| 00:00:01 |
+|   9 |     TABLE ACCESS    | T_AA1_RPS_CUST_BAS_M|     1 |    72 |     2   (0)| 00:00:01 |
+|  10 |      INDEX UNIQUE SCAN| <index_name>   |     1 |       |     1   (0)| 00:00:01 |
+|  11 |    TABLE ACCESS     | T_KEO_CMPG_CUST_INF_|     1 |    80 |     2   (0)| 00:00:01 |
+|  12 |     INDEX UNIQUE SCAN| <index_name>   |     1 |       |     1   (0)| 00:00:01 |
+|  13 |   TABLE ACCESS      | T_KEO_CMPG_INF   |     1 |    56 |     2   (0)| 00:00:01 |
+|  14 |    INDEX UNIQUE SCAN| <index_name>    |     1 |       |     1   (0)| 00:00:01 |
+|  15 |   TABLE ACCESS      | T_KEO_CMPG_INF   |     1 |    56 |     2   (0)| 00:00:01 |
+|  16 |    INDEX UNIQUE SCAN| <index_name>    |     1 |       |     1   (0)| 00:00:01 |
+-------------------------------------------------------------------------------------
